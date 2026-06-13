@@ -1,26 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Updated Dashboard with Glassmorphism Design -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <!-- Top Header -->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:title="News Dashboard" />
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
-    <Spinner
-        android:id="@+id/spinner_sort"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="✨ ITC NEWS"
+            android:textColor="@color/text_main"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_resources"
+        <ImageView
+            android:id="@+id/btn_menu"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:tint="@color/text_main" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="News &amp; Resources"
+                android:textColor="@color/text_main"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share and discover college resources"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+
+            <!-- Sort Filter Chips (Simulated) -->
+            <Spinner
+                android:id="@+id/spinner_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_input_field"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <!-- Add News / Resource Form Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_glass_card"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ADD NEWS / RESOURCE"
+                    android:textColor="@color/text_main"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NEWS TITLE"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="10sp" />
+                        <EditText
+                            android:id="@+id/et_new_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_input_field"
+                            android:hint="Enter title..."
+                            android:textColor="@color/text_main"
+                            android:textColorHint="@color/text_hint"
+                            android:paddingStart="12dp"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <View android:layout_width="12dp" android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CATEGORY"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="10sp" />
+                        <EditText
+                            android:id="@+id/et_new_category"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_input_field"
+                            android:hint="e.g. Events..."
+                            android:textColor="@color/text_main"
+                            android:textColorHint="@color/text_hint"
+                            android:paddingStart="12dp"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="LINK URL"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp" />
+                <EditText
+                    android:id="@+id/et_new_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="https://..."
+                    android:textColor="@color/text_main"
+                    android:textColorHint="@color/text_hint"
+                    android:paddingStart="12dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="DESCRIPTION"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp" />
+                <EditText
+                    android:id="@+id/et_new_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Write a short description..."
+                    android:gravity="top"
+                    android:padding="12dp"
+                    android:textColor="@color/text_main"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/first_comment_label"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp" />
+                <EditText
+                    android:id="@+id/et_new_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Leave a comment..."
+                    android:textColor="@color/text_main"
+                    android:textColorHint="@color/text_hint"
+                    android:paddingStart="12dp"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RatingBar
+                        android:id="@+id/rb_new_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="0"
+                        android:stepSize="1.0"
+                        android:isIndicator="false"
+                        android:progressTint="@color/purple_bright"
+                        android:progressBackgroundTint="#4DFFFFFF"
+                        android:minHeight="48dp"
+                        android:focusable="true"
+                        android:clickable="true" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/btn_add_resource"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_button_purple"
+                        android:text="@string/submit_button"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_main"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!-- Resource List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_resources"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
