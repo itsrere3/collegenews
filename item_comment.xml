@@ -1,33 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Updated Comment Item with Glassmorphism Design -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_glass_card">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <TextView
             android:id="@+id/tv_comment_user"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/text_main"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tv_comment_stars"
+        <RatingBar
+            android:id="@+id/rating_bar_comment"
+            style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FF9800" />
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="@color/purple_bright" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/tv_comment_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp" />
+        android:layout_marginTop="6dp"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp" />
 
 </LinearLayout>
