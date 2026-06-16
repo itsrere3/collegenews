@@ -1,3 +1,19 @@
+CREATE TABLE user_resource_comment (
+comment_id INT PRIMARY KEY AUTO_INCREMENT,
+user_id INT NOT NULL,
+resource_id INT NOT NULL,
+comment_text TEXT,
+star_rating INT CHECK (star_rating BETWEEN 1 AND 5),
+FOREIGN KEY (user_id)
+REFERENCES userlist(UserID),
+FOREIGN KEY (resource_id)
+
+REFERENCES learningresources(resource_id)
+);
+
+
+
+
 SELECT  c.comment_id,
         u.UserID        AS user_id,
         u.Firstname,
