@@ -1,0 +1,13 @@
+SELECT resource_id,
+       ROUND(AVG(star_rating), 1) AS final_rating
+FROM user_resource_comment
+GROUP BY resource_id
+ORDER BY final_rating DESC;
+
+
+SELECT resource_id,
+       ROUND(AVG(star_rating), 1) AS final_rating
+FROM user_resource_comment
+GROUP BY resource_id
+HAVING final_rating > 3
+ORDER BY final_rating DESC;
