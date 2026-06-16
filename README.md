@@ -5,9 +5,8 @@ Welcome to the ultimate hub for campus journalism. Our platform connects student
 
 
 
+https://snip.sa/vlTch2
+https://snip.sa/nyeAG6
 
-https://snip.sa/WhjWWQ
-https://snip.sa/rjIwZj
-
-https://snip.sa/0dV8Qs
-https://snip.sa/Jhh1fZ
+https://snip.sa/sYzSma
+https://snip.sa/Leg94x
